@@ -27,9 +27,9 @@
     ]
   },
   "paths": {
-    "@pages/*": ["src/app/pages"],
-    "@services/*": ["src/app/pages"],
-    "@models/*": ["src/app/models"]
+    "@pages/*": ["src/app/pages/*"],
+    "@services/*": ["src/app/pages/*"],
+    "@models/*": ["src/app/models/*"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
