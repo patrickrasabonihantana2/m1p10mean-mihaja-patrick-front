@@ -1,0 +1,14 @@
+<div>
+  <div *ngFor="let message of messages">
+    <div class="flex flex-row justify-between" [ngClass]="message.level">
+      <div>
+        {{message.value}}
+      </div>
+      <div>
+        <button type="button" class="close" (click)="close(message)">
+          <span class="iconify ci:close-small" data-icon="ci:close-small"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
