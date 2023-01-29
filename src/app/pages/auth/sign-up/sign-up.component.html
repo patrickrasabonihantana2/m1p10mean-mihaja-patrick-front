@@ -1,1 +1,39 @@
-<p>sign-up works!</p>
+<div class="w-full h-full flex justify-center items-center">
+  <div class="bg-white p-8">
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSignUp()">
+      <div class="flex flex-col py-8">
+        <div class="flex justify-center">
+          <span class="iconify" data-icon="ic:twotone-garage" data-width="100"></span>
+        </div>
+        <div class="flex justify-center">
+          <h3>INSCRIPTION</h3>
+        </div>
+      </div>
+      <div>
+        <app-global-message></app-global-message>
+        <div class="flex flex-row py-2">
+          <input class="input" type="text" placeholder="Nom" formControlName="nom">
+        </div>
+        <div class="flex flex-row py-2">
+          <input class="input" type="text" placeholder="Prenom" formControlName="prenom">
+        </div>
+        <div class="flex flex-row py-2">
+          <input class="input" type="email" placeholder="Email" formControlName="email">
+        </div>
+        <div class="flex flex-row py-2">
+          <input class="input" type="password" placeholder="Mot de passe" formControlName="mdp">
+        </div>
+        <div class="flex flex-row py-2">
+          <input class="input" type="password" placeholder="Confirmation Mot de passe" formControlName="mdpConfirm">
+        </div>
+        <div class="flex justify-between py-8">
+          <button class="w-full btn btn-primary" role="button">S'inscrire</button>
+        </div>
+        <div>
+          <div>Si vous avez un compte, <a routerLink="/auth/login">connectez-vou ici</a></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

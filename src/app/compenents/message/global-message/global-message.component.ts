@@ -20,11 +20,6 @@ export class GlobalMessageComponent implements OnInit {
     this.messageSubscription = this.globalMessageService.messageSubject.subscribe(messages => {
       this.messages = messages;
     });
-    this.globalMessageService.add(Message.success('un succes'));
-    this.globalMessageService.add(Message.info('une information'));
-    this.globalMessageService.add(Message.warning('un avertissements'));
-    this.globalMessageService.add(Message.error('une erreur'));
-    console.log('messages', this.messages);
   }
   ngOnDestroy(): void {
     this.messageSubscription.unsubscribe();

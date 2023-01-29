@@ -9,16 +9,16 @@ import { GlobalMessageService } from './services/global-message.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GlobalMessageComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+  ],
+  providers: [
     GlobalMessageService
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
