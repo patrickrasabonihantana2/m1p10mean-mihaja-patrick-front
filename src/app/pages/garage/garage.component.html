@@ -1,1 +1,41 @@
-<p>garage works!</p>
+<div class="w-full h-full">
+<nav class="fixed w-full px-4 py-2 bg-white flex flex-row justify-between">
+  <div class="flex flex-row">
+    <div>
+      <span class="iconify" data-icon="ic:twotone-garage" data-width="46"></span>
+    </div>
+    <div class="flex h-full items-center px-2">
+      <h1>Mean Garage</h1>
+    </div>
+    <div class="flex h-full items-center">
+
+    </div>
+  </div>
+  <div class="flex h-auto items-center">
+    <div>
+      <input type="text" class="input" placeholder="Recherche">
+    </div>
+    <div>
+      <button class="btn hover:bg-blue-50 bg-transparent border-0 border-b-2 border-slate-400 hover:border-blue-400">
+        <span class="iconify" data-icon="material-symbols:search" data-width="24"></span>
+      </button>
+    </div>
+  </div>
+  <div class="flex h-auto items-center">
+    <div class="px-1">
+      <button class="dropbtn">Manohisoa Randria</button>
+    </div>
+    <div class="px-1">
+      <button class="flex h-auto items-center">
+        <span class="iconify" data-icon="material-symbols:logout" data-width="22"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<main class="px-4 pt-20 pb-16">
+  <router-outlet></router-outlet>
+</main>
+<div class="w-full px-4 py-2 bg-white bottom-0 left-0 fixed flex justify-center">
+  <p>&#169; by Patrick and Mihaja</p>
+</div>
+</div>
