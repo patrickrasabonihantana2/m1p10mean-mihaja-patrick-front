@@ -7,7 +7,7 @@ import { GarageComponent } from './garage.component';
 
 @NgModule({
   declarations: [
-    GarageComponent
+    GarageComponent,
   ],
   imports: [
     CommonModule,

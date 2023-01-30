@@ -37,6 +37,7 @@ export class AuthService {
             let token = response.data.token;
             localStorage.setItem('token', token);
             let utilisateur = response.data.utilisateur;
+            localStorage.setItem('utilisateur_id', utilisateur._id);
             this._utilisateur = utilisateur;
             return utilisateur;
           }),
@@ -73,5 +74,30 @@ export class AuthService {
   logout() {
     localStorage.removeItem("token");
     this._utilisateur = undefined;
+  }
+
+  findCurrentUtilisateur(): Observable<Utilisateur> {
+    const token: string = localStorage.getItem("token") || '';
+
+    let userId: string = localStorage.getItem("utilisateur_id") || '';
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    const options = {
+      headers: headers
+    };
+    return this.http.get(`${environment.apiUrl}/utilisateur/${userId}`, options)
+        .pipe(
+          map((response: JsendResponse) => {
+            let utilisateurs = response.data.utilisateurs;
+            return utilisateurs[0];
+          }),
+          catchError((error: any) => {
+            this.messageService.add(Message.error(error.error.data.message));
+            throw error;
+          })
+        );
   }
 }

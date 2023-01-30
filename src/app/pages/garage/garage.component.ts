@@ -16,7 +16,21 @@ export class GarageComponent implements OnInit {
           private router: Router) { }
 
   ngOnInit(): void {
-    this.utilisateur = this.authService.utilisateur;
+    this.getCurrentUtilisateur();
+  }
+
+  getCurrentUtilisateur(): void {
+    let currUtilsiateur = this.authService.utilisateur;
+    if(currUtilsiateur) {
+      this.utilisateur = currUtilsiateur;
+    } else {
+      this.authService.findCurrentUtilisateur().subscribe(
+        data => {
+          console.log(data);
+          this.utilisateur = data;
+        }
+      );
+    }
   }
 
   onSignOut(): void {

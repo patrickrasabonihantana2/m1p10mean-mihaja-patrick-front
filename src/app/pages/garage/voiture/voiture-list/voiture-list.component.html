@@ -1,0 +1,29 @@
+<div>
+  <div class="w-full p-10 bg-white">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Matricule</th>
+          <th>Marque</th>
+          <th>Modele</th>
+          <th class="w-fit"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voiture of voitures">
+          <td class="td-txt">{{voiture.matricule}}</td>
+          <td class="td-txt">{{voiture.marque}}</td>
+          <td class="td-txt">{{voiture.modele}}</td>
+          <td class="action">
+            <button class="mx-2 bg-slate-400 text-white p-1">
+              <span class="iconify !text-white" data-icon="gridicons:visible" data-width="24"></span>
+            </button>
+            <button class="mx-2 bg-slate-400 p-1">
+              <span class="iconify !text-white" data-icon="system-uicons:write" data-width="24"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
