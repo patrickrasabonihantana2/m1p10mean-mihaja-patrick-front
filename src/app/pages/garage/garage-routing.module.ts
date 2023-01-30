@@ -5,7 +5,18 @@ import { GarageComponent } from './garage.component';
 const routes: Routes = [
   {
     path: '',
-    component: GarageComponent
+    component: GarageComponent,
+    children: [
+      {
+        path:'voiture',
+        loadChildren: () => import('./voiture/voiture.module').then( m => m.VoitureModule )
+      },
+      {
+        path: '',
+        redirectTo: 'voiture',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 

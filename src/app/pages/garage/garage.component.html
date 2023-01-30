@@ -23,10 +23,10 @@
   </div>
   <div class="flex h-auto items-center">
     <div class="px-1">
-      <button class="dropbtn">Manohisoa Randria</button>
+      <button class="dropbtn">{{utilisateur.prenom}} {{utilisateur.nom}}</button>
     </div>
     <div class="px-1">
-      <button class="flex h-auto items-center">
+      <button class="flex h-auto items-center" (click)="onSignOut()">
         <span class="iconify" data-icon="material-symbols:logout" data-width="22"></span>
       </button>
     </div>

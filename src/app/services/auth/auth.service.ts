@@ -12,8 +12,16 @@ import { Message } from 'src/app/models/message/message';
   providedIn: 'root'
 })
 export class AuthService {
+  private _utilisateur!: Utilisateur;
 
   constructor(private http: HttpClient, private messageService: GlobalMessageService) { }
+
+  get utilisateur(): Utilisateur {
+    return this._utilisateur;
+  }
+  get isAuth(): boolean {
+    return (this._utilisateur) ? true : false;
+  }
 
   login(utilisateurLogin: UtilisateurLogin): Observable<any> {
     const headers = new HttpHeaders({
@@ -29,6 +37,7 @@ export class AuthService {
             let token = response.data.token;
             localStorage.setItem('token', token);
             let utilisateur = response.data.utilisateur;
+            this._utilisateur = utilisateur;
             return utilisateur;
           }),
           catchError((error: any) => {
@@ -63,5 +72,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem("token");
+    this._utilisateur = undefined;
   }
 }
